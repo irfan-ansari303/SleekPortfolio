@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* ---- Custom animations ---- */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(99, 102, 241, 0.15); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in-delay {
+  animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+.animate-fade-in-delay-2 {
+  animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+/* ---- Glass card with line border ---- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 0 0 0.5px rgba(255, 255, 255, 0.04),
+    0 8px 40px rgba(0, 0, 0, 0.4);
+}
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 0 0.5px rgba(255, 255, 255, 0.08),
+    0 12px 48px rgba(0, 0, 0, 0.5),
+    0 0 24px rgba(99, 102, 241, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ---- Gradient accent line ---- */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.5) 30%,
+    rgba(168, 85, 247, 0.5) 50%,
+    rgba(99, 102, 241, 0.5) 70%,
+    transparent 100%
+  );
+}
+
+/* ---- Body ---- */
+body {
+  background-color: #050507;
+  color: #e2e8f0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(168, 85, 247, 0.04), transparent);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
