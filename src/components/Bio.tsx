@@ -10,7 +10,7 @@ export function Bio() {
           </div>
           <h2 className="text-lg font-semibold text-white tracking-tight">About</h2>
         </div>
-        
+
         <p className="text-slate-400 leading-relaxed text-[15px] md:text-base">
           A Full Stack Developer skilled in developing web applications using{" "}
           <span className="text-slate-200">Express.js</span>,{" "}
