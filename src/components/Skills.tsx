@@ -33,17 +33,17 @@ export function Skills() {
   return (
     <section className="mt-10 animate-fade-in-delay">
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/10">
+        <div className="w-8 h-8 flex items-center justify-center rounded-lg section-icon-glass bg-purple-500/10 text-purple-400 border border-purple-500/10">
           <Cpu size={18} />
         </div>
-        <h2 className="text-lg font-semibold text-white tracking-tight">Skills & Tech Stack</h2>
+        <h2 className="text-lg font-semibold theme-heading tracking-tight">Skills & Tech Stack</h2>
       </div>
 
       <div className="flex flex-wrap gap-2">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[13px] font-medium bg-transparent transition-all duration-300 cursor-default hover:scale-[1.03] ${skill.color}`}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[13px] font-medium glass-badge transition-all duration-300 cursor-default hover:scale-[1.03] ${skill.color}`}
           >
             {skill.icon}
             <span>{skill.name}</span>

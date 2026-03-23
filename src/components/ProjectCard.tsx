@@ -14,7 +14,7 @@ export type Project = {
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="glass-card glass-card-hover rounded-xl overflow-hidden group">
+    <div className="glass-card glass-card-hover gradient-border-glow rounded-xl overflow-hidden group">
       <div className="flex flex-col md:flex-row">
         {/* Thumbnail */}
         <div className="md:w-[38%] relative aspect-video md:aspect-auto md:min-h-[220px] overflow-hidden shrink-0">
@@ -24,23 +24,23 @@ export function ProjectCard({ project }: { project: Project }) {
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#050507]/80 hidden md:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050507]/80 to-transparent md:hidden" />
+          <div className="absolute inset-0 theme-project-overlay-r hidden md:block" />
+          <div className="absolute inset-0 theme-project-overlay-t md:hidden" />
         </div>
 
         {/* Content */}
         <div className="flex flex-col flex-grow justify-between p-5 md:p-6">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors duration-300">
+              <h3 className="text-xl font-bold theme-heading group-hover:text-indigo-400 transition-colors duration-300">
                 {project.title}
               </h3>
-              <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 uppercase tracking-wide">
+              <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold glass-badge bg-emerald-500/10 text-emerald-400 border border-emerald-500/15 uppercase tracking-wide">
                 <Activity size={10} />
                 {project.status}
               </span>
             </div>
-            <p className="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-3">
+            <p className="theme-text-muted text-sm leading-relaxed mb-4 line-clamp-3">
               {project.description}
             </p>
             
@@ -49,7 +49,7 @@ export function ProjectCard({ project }: { project: Project }) {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 text-[11px] font-medium rounded-md bg-white/[0.03] text-slate-400 border border-white/[0.06]"
+                  className="px-2 py-0.5 text-[11px] font-medium rounded-md theme-tag"
                 >
                   {tag}
                 </span>
@@ -72,7 +72,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.03] text-slate-300 font-medium text-xs transition-all duration-300"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border theme-link-btn font-medium text-xs transition-all duration-300"
             >
               <Github size={13} />
               Source Code
