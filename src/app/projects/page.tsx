@@ -57,7 +57,7 @@ export default function ProjectsPage() {
       <div className="mb-10">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group mb-6"
+          className="inline-flex items-center gap-2 theme-text-muted hover:text-indigo-400 transition-colors group mb-6"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           Back to Home
@@ -66,9 +66,9 @@ export default function ProjectsPage() {
           <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400">
             <FolderGit2 size={32} />
           </div>
-          <h1 className="text-4xl font-bold text-white tracking-tight">All Projects</h1>
+          <h1 className="text-4xl font-bold theme-heading tracking-tight">All Projects</h1>
         </div>
-        <p className="mt-4 text-slate-400 text-lg max-w-2xl">
+        <p className="mt-4 theme-text-muted text-lg max-w-2xl">
           Here is a collection of my recent work, ranging from scalable backend APIs to dynamic, modern frontend interfaces.
         </p>
       </div>

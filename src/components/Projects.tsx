@@ -32,7 +32,7 @@ export function Projects() {
         <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/10">
           <FolderGit2 size={18} />
         </div>
-        <h2 className="text-lg font-semibold text-white tracking-tight">Featured Projects</h2>
+        <h2 className="text-lg font-semibold theme-heading tracking-tight">Featured Projects</h2>
       </div>
 
       <div className="flex flex-col gap-5">
@@ -44,7 +44,7 @@ export function Projects() {
       <div className="mt-8 flex justify-center">
         <Link
           href="/projects"
-          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/[0.12] text-slate-300 hover:text-white text-sm font-medium transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border theme-view-more text-sm font-medium transition-all duration-300"
         >
           View More Projects
           <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
