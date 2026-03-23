@@ -30,8 +30,8 @@ export function Header() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 relative z-10">
 
           <div className="flex flex-col gap-4">
-            {/* Profile Avatar with gradient glow */}
-            <div className="relative shrink-0 w-20 h-20 sm:w-28 sm:h-28 -mt-5 sm:-mt-7 group profile-glow">
+            {/* Profile Avatar */}
+            <div className="relative shrink-0 w-20 h-20 sm:w-28 sm:h-28 -mt-5 sm:-mt-7 group">
               <div className="relative border-2 theme-profile-ring rounded-full overflow-hidden w-full h-full theme-profile-bg shadow-lg">
                 <Image
                   src="/profile.png"

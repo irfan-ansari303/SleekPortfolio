@@ -38,20 +38,25 @@ export function WakaTimeStatus() {
 
   // Determine styles depending on active state
   const isOnline = data.active;
-  const statusColor = isOnline ? 'bg-green-500' : 'bg-slate-500';
+  const statusColor = isOnline ? 'bg-slate-500 group-hover:bg-green-500 transition-colors duration-300' : 'bg-slate-500';
   const glowColor = isOnline ? 'bg-green-500/10' : 'bg-slate-500/10';
   const dotPulse = isOnline ? 'animate-pulse bg-green-500' : 'bg-slate-500';
+
+  const formatTime = (timeStr?: string) => {
+    if (!timeStr) return '';
+    return timeStr.replace(/^0 hrs? /, '');
+  };
 
   return (
     <>
       {/* Visual Dot on Avatar */}
       <div className={`absolute bottom-0 right-0 sm:bottom-1 sm:right-1 w-5 h-5 sm:w-6 sm:h-6 ${statusColor} rounded-full border-4 border-[#0B0D0E] z-20 cursor-default`} title={isOnline ? "Online & Working" : "Offline"}>
         {/* Ping animation (only if online) */}
-        {isOnline && <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-40"></div>}
+        {isOnline && <div className="absolute inset-0 rounded-full group-hover:bg-green-500 bg-slate-500 animate-ping opacity-40 transition-colors duration-300"></div>}
       </div>
 
-      {/* Floating Status Card (visible on hover) */}
-      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 translate-x-2 group-hover:translate-x-0 w-max hidden sm:block">
+      {/* Floating Status Card (visible on hover/tap) */}
+      <div className="absolute left-full top-1/2 -translate-y-1/2 ml-3 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-30 translate-x-2 group-hover:translate-x-0 w-max">
         <div className="bg-[#111118]/95 backdrop-blur-md border border-white/10 rounded-lg p-2.5 px-3.5 shadow-2xl flex items-center gap-3 relative overflow-hidden">
           {/* Subtle glow behind card */}
           <div className={`absolute top-0 right-0 w-24 h-24 ${glowColor} blur-2xl rounded-full opacity-50`}></div>
@@ -67,7 +72,7 @@ export function WakaTimeStatus() {
             
             <p className="text-[10px] text-slate-300 mt-0.5 flex items-center gap-1.5">
               <span className={`w-1.5 h-1.5 rounded-full ${dotPulse}`}></span>
-              {isOnline ? `Today I worked ${data.todayText}` : `Yesterday I worked ${data.yesterdayText}`}
+              {isOnline ? `Today I worked ${formatTime(data.todayText)}` : `Yesterday I worked ${formatTime(data.yesterdayText)}`}
             </p>
             
             {data.isMock && (

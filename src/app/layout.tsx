@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Oneko from '../components/Oneko'
 
 import './globals.css'
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           }}
         />
 
+        <Oneko />
         <div className="max-w-2xl mx-auto relative select-none" style={{ zIndex: 1 }}>
           {/* Left border line */}
           <div className="absolute left-0 top-0 bottom-0 w-px theme-sidebar-line" />
