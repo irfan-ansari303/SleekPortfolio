@@ -9,9 +9,7 @@ export default function Oneko() {
     if (isRunning.current) return
     isRunning.current = true
 
-    const isReducedMotion =
-      window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-      window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
+    const isReducedMotion = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches
 
     if (isReducedMotion) return
 
