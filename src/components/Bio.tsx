@@ -2,27 +2,26 @@ import { User } from "./Icons";
 
 export function Bio() {
   return (
-    <section className="mt-10 animate-fade-in">
-      <div className="glass-card glass-card-hover gradient-border-glow rounded-xl p-6 md:p-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 flex items-center justify-center rounded-lg section-icon-glass bg-indigo-500/10 text-indigo-400 border border-indigo-500/10">
-            <User size={18} />
-          </div>
-          <h2 className="text-lg font-semibold theme-heading tracking-tight">About</h2>
-        </div>
+    <section className="mt-2 animate-fade-in px-2 sm:px-0">
+      <div className="relative">
+        {/* Header using theme-heading for consistency */}
+        <h2 className="text-xl font-bold theme-heading tracking-tight mb-4">
+          About Me
+        </h2>
 
-        <p className="theme-text-muted leading-relaxed text-[15px] md:text-base">
+        {/* 
+            Body text using theme-text-muted for a sophisticated, breathable look in both modes.
+            Key highlights use theme-text to stand out.
+        */}
+        <p className="theme-text-secondary leading-relaxed text-[15px] md:text-base font-medium transition-colors duration-500">
           A Full Stack Developer skilled in developing web applications using{" "}
-          <span className="theme-text">Express.js</span>,{" "}
-          <span className="theme-text">React.js</span> and modern frameworks.
+          <span className="theme-text font-bold uppercase tracking-tight">Express.js</span>,{" "}
+          <span className="theme-text font-bold uppercase tracking-tight">React.js</span> and modern frameworks.
           Connecting databases with{" "}
-          <span className="text-blue-400">PostgreSQL</span> and{" "}
-          <span className="text-emerald-400">MongoDB</span>, deploying production-ready apps.
+          <span className="theme-text font-bold uppercase tracking-tight">PostgreSQL</span> and{" "}
+          <span className="theme-text font-bold uppercase tracking-tight">MongoDB</span>, deploying production-ready apps.
         </p>
       </div>
-
-      {/* Subtle divider */}
-      <div className="gradient-line mt-10" />
     </section>
   );
 }

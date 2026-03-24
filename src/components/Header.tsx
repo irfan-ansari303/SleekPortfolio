@@ -4,11 +4,12 @@ import { ThemeToggle } from "./ThemeToggle";
 import { WakaTimeStatus } from "./WakaTimeStatus";
 import { Cinzel } from "next/font/google";
 
+
 const cinzel = Cinzel({ subsets: ["latin"] });
 
 export function Header() {
   return (
-    <header className="relative pb-8 mb-8">
+    <header className="relative mb-4">
 
       {/* BANNER SECTION */}
       <div className="-mx-8 md:-mx-12 h-36 sm:h-44 overflow-hidden relative border-y theme-border-secondary">
@@ -71,11 +72,13 @@ export function Header() {
       </div>
 
       {/* Gradient Divider */}
-      <div className="-mx-8 md:-mx-12 mt-8 h-[1px] theme-divider" />
+      <div className="-mx-8 md:-mx-12 mt-6 h-[1px] theme-divider" />
+
 
     </header>
   );
 }
+
 
 function SocialLink({
   href,
