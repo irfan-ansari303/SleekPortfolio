@@ -1,58 +1,102 @@
+"use client";
+
 import { 
-  Terminal, Code2, Layers, Database, Box, Hexagon, AppWindow, Pocket, 
-  Server, Cpu, Cloud, GitBranch, Bot, Sparkles, Code
+  ReactLogo, NextjsLogo, JsLogo, TailwindLogo, MongodbLogo, 
+  PostgresLogo, RedisLogo, GitLogo, DockerLogo, VercelLogo, 
+  NodejsLogo, OpenAI, ClaudeLogo
 } from "./Icons";
+import { motion } from "framer-motion";
 
 type Skill = {
   name: string;
   icon: React.ReactNode;
-  color: string;
 };
 
 const skills: Skill[] = [
-  { name: "C++", icon: <Terminal size={14} />, color: "text-blue-400 border-blue-500/15 hover:border-blue-500/30 hover:bg-blue-500/5" },
-  { name: "JavaScript", icon: <Code size={14} />, color: "text-yellow-400 border-yellow-400/15 hover:border-yellow-400/30 hover:bg-yellow-400/5" },
-  { name: "React.js", icon: <Code2 size={14} />, color: "text-cyan-400 border-cyan-400/15 hover:border-cyan-400/30 hover:bg-cyan-400/5" },
-  { name: "Next.js", icon: <Hexagon size={14} />, color: "text-white border-white/15 hover:border-white/30 hover:bg-white/5" },
-  { name: "TailwindCSS", icon: <Pocket size={14} />, color: "text-teal-400 border-teal-400/15 hover:border-teal-400/30 hover:bg-teal-400/5" },
-  { name: "Shadcn UI", icon: <AppWindow size={14} />, color: "text-zinc-300 border-zinc-400/15 hover:border-zinc-400/30 hover:bg-zinc-400/5" },
-  { name: "Node.js", icon: <Server size={14} />, color: "text-green-400 border-green-500/15 hover:border-green-500/30 hover:bg-green-500/5" },
-  { name: "Express.js", icon: <Layers size={14} />, color: "text-slate-300 border-slate-400/15 hover:border-slate-400/30 hover:bg-slate-400/5" },
-  { name: "Prisma", icon: <Box size={14} />, color: "text-indigo-400 border-indigo-400/15 hover:border-indigo-400/30 hover:bg-indigo-400/5" },
-  { name: "PostgreSQL", icon: <Database size={14} />, color: "text-blue-400 border-blue-400/15 hover:border-blue-400/30 hover:bg-blue-400/5" },
-  { name: "MongoDB", icon: <Database size={14} />, color: "text-green-500 border-green-500/15 hover:border-green-500/30 hover:bg-green-500/5" },
-  { name: "Redis", icon: <Database size={14} />, color: "text-red-400 border-red-400/15 hover:border-red-400/30 hover:bg-red-400/5" },
-  { name: "Vercel", icon: <Cloud size={14} />, color: "text-white border-white/15 hover:border-white/30 hover:bg-white/5" },
-  { name: "Docker", icon: <Box size={14} />, color: "text-sky-400 border-sky-400/15 hover:border-sky-400/30 hover:bg-sky-400/5" },
-  { name: "Git", icon: <GitBranch size={14} />, color: "text-orange-400 border-orange-400/15 hover:border-orange-400/30 hover:bg-orange-400/5" },
-  { name: "Anthropic Claude", icon: <Bot size={14} />, color: "text-amber-400 border-amber-400/15 hover:border-amber-400/30 hover:bg-amber-400/5" },
-  { name: "OpenAI", icon: <Sparkles size={14} />, color: "text-emerald-400 border-emerald-400/15 hover:border-emerald-400/30 hover:bg-emerald-400/5" },
+  { name: "React.js", icon: <ReactLogo size={28} /> },
+  { name: "Next.js", icon: <NextjsLogo size={28} className="theme-text" /> },
+  { name: "JavaScript", icon: <JsLogo size={28} /> },
+  { name: "TailwindCSS", icon: <TailwindLogo size={28} /> },
+  { name: "Node.js", icon: <NodejsLogo size={28} /> },
+  { name: "PostgreSQL", icon: <PostgresLogo size={28} /> },
+  { name: "MongoDB", icon: <MongodbLogo size={28} /> },
+  { name: "Redis", icon: <RedisLogo size={28} /> },
+  { name: "Docker", icon: <DockerLogo size={28} /> },
+  { name: "Vercel", icon: <VercelLogo size={28} className="theme-text" /> },
+  { name: "Git", icon: <GitLogo size={28} /> },
+  { name: "OpenAI", icon: <OpenAI size={28} /> },
+  { name: "Claude", icon: <ClaudeLogo size={28} /> },
 ];
 
 export function Skills() {
+  const firstRow = skills.slice(0, Math.ceil(skills.length / 2));
+  const secondRow = skills.slice(Math.ceil(skills.length / 2));
+
   return (
-    <section className="mt-10 animate-fade-in-delay">
-      <div className="flex items-center gap-3 mb-5">
-        <div className="w-8 h-8 flex items-center justify-center rounded-lg section-icon-glass bg-purple-500/10 text-purple-400 border border-purple-500/10">
-          <Cpu size={18} />
-        </div>
-        <h2 className="text-lg font-semibold theme-heading tracking-tight">Skills & Tech Stack</h2>
+    <section className="mt-4 overflow-hidden py-4">
+      <div className="flex items-center gap-3 mb-8 px-2 sm:px-0">
+        <h2 className="text-xl font-bold theme-heading tracking-tight">
+          Tech Stack
+        </h2>
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-[13px] font-medium glass-badge transition-all duration-300 cursor-default hover:scale-[1.03] ${skill.color}`}
+      <div className="relative flex flex-col gap-10">
+        {/* ROW 1: RIGHT TO LEFT */}
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+          <motion.div 
+            className="flex gap-12 shrink-0 px-8"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 25, 
+              ease: "linear", 
+              repeat: Infinity 
+            }}
           >
-            {skill.icon}
-            <span>{skill.name}</span>
-          </div>
-        ))}
-      </div>
+            {[...firstRow, ...firstRow].map((skill, index) => (
+              <SkillItem key={index} skill={skill} />
+            ))}
+          </motion.div>
+        </div>
 
-      {/* Divider */}
-      <div className="gradient-line mt-12" />
+        {/* ROW 2: LEFT TO RIGHT */}
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+          <motion.div 
+            className="flex gap-12 shrink-0 px-8"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ 
+              duration: 30, 
+              ease: "linear", 
+              repeat: Infinity 
+            }}
+          >
+            {[...secondRow, ...secondRow].map((skill, index) => (
+              <SkillItem key={index} skill={skill} />
+            ))}
+          </motion.div>
+        </div>
+      </div>
     </section>
+  );
+}
+
+function SkillItem({ skill }: { skill: Skill }) {
+  return (
+    <div className="flex flex-col items-center gap-3 group px-4">
+      {/* 
+          Logo-first focus.
+          Removed capsule background for a clean, non-boxed look in both modes.
+      */}
+      <div className="transition-all duration-500 group-hover:scale-125 group-hover:-translate-y-1 filter grayscale-[0.5] group-hover:grayscale-0 drop-shadow-sm group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.1)]">
+        {skill.icon}
+      </div>
+      
+      {/* 
+          Subtle theme-aware text labels.
+          Ensures visibility and professional feel in both Dark and Bright modes.
+      */}
+      <span className="text-[10px] font-black tracking-widest uppercase theme-text-secondary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+        {skill.name}
+      </span>
+    </div>
   );
 }
