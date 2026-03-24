@@ -1,4 +1,4 @@
-import { User } from "./Icons";
+
 
 export function Bio() {
   return (
