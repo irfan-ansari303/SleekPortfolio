@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
-      <body className={`${inter.className} theme-bg theme-text min-h-screen overflow-x-hidden overscroll-y-none`}>
+      <body className={`${inter.className} theme-bg theme-text min-h-screen overflow-x-hidden overscroll-y-none`} suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -36,7 +36,7 @@ export default function RootLayout({
         />
 
         <Oneko />
-        <div className="max-w-2xl mx-auto relative select-none" style={{ zIndex: 1 }}>
+        <div className="max-w-3xl mx-auto relative select-none" style={{ zIndex: 1 }}>
           {/* Left border line */}
           <div className="absolute left-0 top-0 bottom-0 w-px theme-sidebar-line" />
           {/* Right border line */}

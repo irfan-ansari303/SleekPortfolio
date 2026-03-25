@@ -14,7 +14,7 @@ export function Header() {
       {/* BANNER SECTION */}
       <div className="-mx-8 md:-mx-12 h-36 sm:h-44 overflow-hidden relative border-y theme-border-secondary">
         <Image
-          src="/banner.png"
+          src="/banner.webp"
           alt="Profile Banner"
           fill
           className="object-cover"
@@ -35,7 +35,7 @@ export function Header() {
             <div className="relative shrink-0 w-20 h-20 sm:w-28 sm:h-28 -mt-5 sm:-mt-7 group">
               <div className="relative border-2 theme-profile-ring rounded-full overflow-hidden w-full h-full theme-profile-bg shadow-lg">
                 <Image
-                  src="/profile.png"
+                  src="/profile.webp"
                   alt="Irfan Ansari"
                   width={80}
                   height={80}
