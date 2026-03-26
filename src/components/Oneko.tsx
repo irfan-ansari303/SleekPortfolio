@@ -123,7 +123,7 @@ export default function Oneko() {
         }
         idleAnimation =
           avalibleIdleAnimations[
-            Math.floor(Math.random() * avalibleIdleAnimations.length)
+          Math.floor(Math.random() * avalibleIdleAnimations.length)
           ]
       }
 
@@ -181,7 +181,7 @@ export default function Oneko() {
       direction += diffY / distance < -0.5 ? "S" : ""
       direction += diffX / distance > 0.5 ? "W" : ""
       direction += diffX / distance < -0.5 ? "E" : ""
-      
+
       setSprite(direction, frameCount)
 
       nekoPosX -= (diffX / distance) * nekoSpeed

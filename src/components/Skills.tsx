@@ -1,8 +1,8 @@
 "use client";
 
-import { 
-  ReactLogo, NextjsLogo, JsLogo, TailwindLogo, MongodbLogo, 
-  PostgresLogo, RedisLogo, GitLogo, DockerLogo, VercelLogo, 
+import {
+  ReactLogo, NextjsLogo, JsLogo, TailwindLogo, MongodbLogo,
+  PostgresLogo, RedisLogo, GitLogo, DockerLogo, VercelLogo,
   NodejsLogo, OpenAI, ClaudeLogo
 } from "./Icons";
 import { motion } from "framer-motion";
@@ -43,13 +43,13 @@ export function Skills() {
       <div className="relative flex flex-col gap-10">
         {/* ROW 1: RIGHT TO LEFT */}
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
-          <motion.div 
+          <motion.div
             className="flex gap-12 shrink-0 px-8"
             animate={{ x: ["0%", "-50%"] }}
-            transition={{ 
-              duration: 25, 
-              ease: "linear", 
-              repeat: Infinity 
+            transition={{
+              duration: 25,
+              ease: "linear",
+              repeat: Infinity
             }}
           >
             {[...firstRow, ...firstRow].map((skill, index) => (
@@ -60,13 +60,13 @@ export function Skills() {
 
         {/* ROW 2: LEFT TO RIGHT */}
         <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
-          <motion.div 
+          <motion.div
             className="flex gap-12 shrink-0 px-8"
             animate={{ x: ["-50%", "0%"] }}
-            transition={{ 
-              duration: 30, 
-              ease: "linear", 
-              repeat: Infinity 
+            transition={{
+              duration: 30,
+              ease: "linear",
+              repeat: Infinity
             }}
           >
             {[...secondRow, ...secondRow].map((skill, index) => (
@@ -89,7 +89,7 @@ function SkillItem({ skill }: { skill: Skill }) {
       <div className="transition-all duration-500 group-hover:scale-125 group-hover:-translate-y-1 filter grayscale-[0.5] group-hover:grayscale-0 drop-shadow-sm group-hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.1)]">
         {skill.icon}
       </div>
-      
+
       {/* 
           Subtle theme-aware text labels.
           Ensures visibility and professional feel in both Dark and Bright modes.

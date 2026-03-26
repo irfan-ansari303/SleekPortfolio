@@ -1,5 +1,4 @@
 import { ProjectCard } from "./ProjectCard";
-import { ArrowRight } from "./Icons";
 import Link from "next/link";
 import { allProjects } from "@/data/projects";
 
@@ -19,13 +18,12 @@ export function Projects() {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-10 flex justify-center">
         <Link
           href="/projects"
-          className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border theme-border-secondary text-sm font-medium transition-all duration-300"
+          className="px-8 py-2.5 rounded-xl bg-white/70 dark:bg-white/[0.03] backdrop-blur-md border border-black/5 dark:border-white/10 text-black text-[14px] font-medium shadow-sm hover:shadow-md hover:bg-white/90 dark:hover:bg-white/[0.06] transition-all duration-300"
         >
-          View More Projects
-          <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+          Show all Projects
         </Link>
       </div>
     </section>
